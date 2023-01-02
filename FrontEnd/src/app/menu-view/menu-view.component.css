@@ -1,0 +1,23 @@
+#body
+{
+	height: 800px;
+	margin: 0 ;
+	padding: 260px ;
+	text-align: center ;
+	font: 0.8em "Trebuchet MS", helvetica, sans-serif ;
+	background:  #a0ecd0;
+}
+
+
+
+
+
+div#logo               /* placement de l'image dans le coin en à droite */
+{
+    height: 258px;
+	background: no-repeat left top;
+
+}
+
+
+

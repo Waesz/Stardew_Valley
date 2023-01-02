@@ -1,0 +1,10 @@
+
+<!-- affiche l'ensemble des astuces de type "villageois" de la base de données-->
+
+<ul class="astuces">
+    <li *ngFor="let astuce of Astuces">
+      <a routerLink="/astuces/{{astuce.id}}"> {{astuce.title}}  </a>     
+</li>
+  </ul>
+  
+  

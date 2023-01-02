@@ -1,0 +1,66 @@
+  
+  <div class="container-fluid logo-connect">
+    <div class="row">
+    <div id="logo" class="col-8">
+      <a ><img src="..\assets\image\3.png "height="140"     
+          alt="StardewValley logo, bouton du menue" routerLink="/" style="cursor: pointer"></a>        <!-- logo de  stardew_Valley qui amène au menu-->
+      </div>
+          
+    
+    
+    <div class="statut_profil col-4 align-self-end text-center" [hidden]="signedup"> <!-- group button pour ce connecter, sera remplacé par 'ce deco' + 'mon profil' si connecter-->
+      <h3>Vous n'êtes pas connecté(e) !</h3>                
+      <div  role="group" aria-label="Un groupe de boutons">                
+          <button type="button" class="btn btn-primary" routerLink="/register">Créer un compte</button>
+          <button type="button" class="btn btn-primary" routerLink="/login">Se connecter</button>
+          <button type="button" class="btn btn-primary" routerLink="/">se connecter avec google</button>
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <div class="statut_profil statut_profil col-4 align-self-end text-center"  [hidden]="!signedup">      <!-- group button qui remplace ce de en-haut si la personne n'est pas connecter -->
+      <h3>Vous êtes connecté(e) !</h3>                 
+      <div class="btn-group" role="group" aria-label="Un groupe de boutons">    
+          <button type="button" class="btn btn-secondary" (click)="disconnect()">se déconnecter</button>
+          <button type="button" class="btn btn-secondary" routerLink="/profile">mon profil</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div>
+  <nav id='navbar' class="navbar navbar-expand-lg navbar-light bg-light ">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page"routerLink="/">Home</a>
+          <a class="nav-link" routerLink="astuces/showAll">Astuces</a>
+          <a class="nav-link" routerLink="ajouterAstuce">Ajouter une astuce</a>
+          <a class="nav-link" routerLink="#">Mes astuces</a>          <!-- non fonctionnelle / pas mis en place -->
+          <a class="nav-link" href="https://disboard.org/fr/server/join/977591428186243072" target="_blank" >Discord</a>              
+          <a class="nav-link" routerLink="#" >Gestion astuces</a>     <!-- non fonctionnelle / pas mis en place -->
+          <a class="nav-link" routerLink="#" >Gestion commentaires</a><!-- non fonctionnelle / pas mis en place -->
+          <a class="nav-link" routerLink="#" >Gestion utilisateurs</a><!-- non fonctionnelle / pas mis en place -->
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+</div>  
+  <router-outlet></router-outlet>
+  
+  
+  

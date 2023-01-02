@@ -1,0 +1,30 @@
+<div class="container">
+     <div class="card"> 
+        <div class="info"> 
+            <span>Edit form</span> 
+            <button id="savebutton"  (click)="onClick()">edit</button> 
+        </div> 
+        <div class="forms"> 
+            <div class="inputs"> 
+                <span>Prénom</span> 
+                <input type="text" readonly [(ngModel)]="name"> 
+            </div> 
+            <div class="inputs"> 
+                <span>Nom</span> 
+                <input type="text" readonly [(ngModel)]="lastName"> 
+            </div> 
+            <div class="inputs">
+                 <span>Email</span> 
+                 <input type="text" readonly [(ngModel)]="email"> 
+                </div> 
+                <div class="inputs">
+                     <span>Pseudo</span> 
+                     <input type="text" readonly [(ngModel)]="pseudo"> 
+                    </div>
+                     <div class="inputs">
+                         <span>password</span>
+                          <input type="text" readonly [(ngModel)]="password" > 
+                        </div> 
+                    </div> 
+                </div>
+</div>
