@@ -15,7 +15,7 @@ export class GetAstucesVillageoisService {
 
   private getAstucesUrl = 'http://localhost:3000/astuces/showAll';
 
-
+private createAstuceUrl = 'http://localhost:3000/astuces/AddAstuce';
 
   private getAstuceUrl = 'http://localhost:3000/astuces/';
 
@@ -26,8 +26,15 @@ export class GetAstucesVillageoisService {
 
   getAstuce(id:number): Observable<Astuce>{
     return this.http.get<Astuce>(this.getAstuceUrl+id);
-  } 
+  }
 
+
+
+
+AddAstuce(a:Astuce): Observable<Astuce>{
+   
+  return this.http.post<Astuce>(this.createAstuceUrl,a);
+}
 
 
 

@@ -27,6 +27,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.BOOLEAN,
             allowNull: false
             
+        },
+        idUser:{
+            type: DataTypes.INTEGER,          
+            allowNull: false
         }
     },
     {timestamps : false,

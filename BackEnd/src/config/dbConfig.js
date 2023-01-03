@@ -2,8 +2,8 @@ module.exports = {
 
 HOST: 'localhost',
 USER: 'root',
-PASSWORD: 'NB54s6nb',
-DB: 'web_serv',
+PASSWORD: 'root',
+DB: 'progwebserveur',
 dialect: 'mysql',
 
 

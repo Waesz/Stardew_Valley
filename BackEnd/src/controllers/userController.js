@@ -70,6 +70,12 @@ res.status(200).send({message:"welcome back!", token : jwtToken});
 
 const register = async (req,res) => {
 
+
+  let uz = await User.findOne({where:{email : req.body.email}})
+
+  if(uz != null)return res.status(400).send("Utilisateur existe déja.");
+
+
 const hashedPassword = await bcrypt.hash(req.body.password, 10);
  
 if(!req.body.email){return res.status(400).send("Fill all fields")}
@@ -151,7 +157,7 @@ const updateInfo = async (req,res) => {
 
 
 
-//VOIR TOUT LES UTILISATEURS 
+//VOIR INFOS D'UN UTILISATEURS 
 const getUserInfo = async (req,res) => {
 
 email = req.user.email;

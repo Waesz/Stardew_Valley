@@ -1,8 +1,8 @@
 
-<!-- affiche l'ensemble des astuces de type "villageois" de la base de données-->
 
-<ul class="astuces">
-    <li *ngFor="let astuce of Astuces">
+
+<ul class="astuces list-group list-group-flush">
+    <li *ngFor="let astuce of Astuces" class="list-group-item">
       <a routerLink="/astuces/{{astuce.id}}"> {{astuce.title}}  </a>     
 </li>
   </ul>

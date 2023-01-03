@@ -1,36 +1,41 @@
-<!-- permet d'avoir un formulaire pour créer une astuce-->
-<form [formGroup]="AddAstuceForm" (ngSubmit)="addAstuce()" class="form-astuce">
 
-    <ng-template *ngIf="loaded">
-    <label class="col-sm-2">Villageois</label>
-        <div class="col-sm-10">
-            <select name="Villageois" class="form-control">
-                    <option>----</option>
-                    <option *ngFor="let v of allVillageois"></option>
-                    {{v.Nom}}
-            </select>
-        </div>
-    </ng-template>
+<form class="form-astuce" [formGroup]="AddAstuceForm" (ngSubmit)="addAstuce()">
+
+   <select #obj (change)="update($event)">
+      <option value="default" >Selectionner le villageois</option>
+      <option *ngFor="let vil of allVillageois" [value]="vil.id">
+          {{vil.Nom}}
+      </option>
+  </select>
+
+
+
+
     <div id="titre">           
-        <label for="titre">Titre de votre astuce</label>   <!-- mise en place du titre du futur astuce-->
-     <textarea formControlName="title" name="titre_astuce" rows="2" cols="60" required minlength="5" maxlength="50" placeholder="le titre de votre astuce"></textarea>
-      
-    </div>
+        <label for="titre">Titre de votre astuce</label>  <br> <!-- mise en place du titre du futur astuce-->
+     <input formControlName="title" name="titre_astuce" rows="2" cols="60" required minlength="5" maxlength="50" placeholder="le titre de votre astuce">
+      <div *ngIf="getTitle?.errors?.['minlength']" >Le titre doit avoir 5 caractéres minimum.</div>
+      <div *ngIf="getTitle?.touched && getTitle?.invalid" class="alert alert-danger">Le titre est obligatoire.</div>
+   
+   </div>
    
     <div id="tag1">
-       <label for=" tag1" >Tag N°1 de votre astuce </label>   <!-- tag de la futur astuce-->
-       <textarea formControlName="tag1" name="tag_astuce1" rows=" 2" cols="20"  required minlength="1" maxlength="50" placeholder="le tag de votre astuce"></textarea>
+       <label for=" tag1" >Tag N°1 de votre astuce </label>   <!-- tag de la futur astuce--><br>
+       <input formControlName="tag1" name="tag_astuce1" rows=" 2" cols="20"  required minlength="1" maxlength="50" placeholder="le tag de votre astuce">
     </div>
    
     <div id="tag2">
-       <label for=" tag2">Tag N°2 de votre astuce </label> <!-- tag de la futur astuce-->
-       <textarea formControlName="tag2" name="tag_astuce2" rows=" 2" cols="20"   minlength="1" maxlength="50" placeholder="le tag de votre astuce"></textarea>
+       <label for=" tag2">Tag N°2 de votre astuce </label> <br><!-- tag de la futur astuce-->
+       <input formControlName="tag2" name="tag_astuce2" rows=" 2" cols="20"   minlength="1" maxlength="50" placeholder="le tag de votre astuce">
     </div>
    
     <div id="text">
-       <label for=" text">Texte de votre astuce </label>   <!-- texte de la futur astuce-->
-       <textarea formControlName="text" name="message_astuce" rows=" 10" cols="100"  required minlength="20" maxlength="2000" placeholder="le texte de votre astuce"></textarea>
-    </div>
+       <label for=" text">Texte de votre astuce </label> <br>  <!-- texte de la futur astuce-->
+       <textarea formControlName="text" name="message_astuce" rows=" 10" cols="100"  required minlength="15" maxlength="2000" placeholder="le texte de votre astuce"></textarea>
+       <div *ngIf="getText?.errors?.['minlength']" >Le texte doit avoir 15 caractéres minimum.</div>
+       <div *ngIf="getText?.touched && getText?.invalid" class="alert alert-danger">Le texte est obligatoire.</div>
+   
+      </div>
    
    
     <div class="form-astuce" id="button-astuce">   <!--bouton pour envoyer l'astuce-->

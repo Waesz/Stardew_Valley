@@ -48,7 +48,7 @@ this.getUserService.createUser(user).subscribe(
 }
 
 ,
-(error: any)=> console.log(error),
+(error: any)=> alert("Utilisateur existe déja"),
 ()=> console.log("User created")
 
 

@@ -40,14 +40,16 @@ export class LoginComponent implements OnInit{
 
       this.getUserService.loginUser(this.loginForm.value).subscribe(
       (Response : any)=> {
-        console.log(Response);
+       
       if(Response.status == 200){AuthInterceptor.accessToken = Response.body.token;
 
-      this.router.navigate(['/'])
-    }
+     this.router.navigate(['/'])
+    
 
-      },
-      (error: any)=> console.log(error)
+    
+      }
+    },
+      (error: any)=>alert("mot de passe ou email non valide.")
       
       );
       

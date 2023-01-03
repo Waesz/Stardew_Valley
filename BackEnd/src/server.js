@@ -69,7 +69,7 @@ app.get("/getObjects",async (req,res)=>{
 
     })
    
-        res.status(200).send(Allvillageois);
+        res.status(200).json(Allvillageois);
 
     })
 

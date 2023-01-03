@@ -21,7 +21,7 @@ constructor(private getUserService: GetUserService, private logCheckservice: Log
 
     if(AuthInterceptor.accessToken!=''){
       this.logCheckservice.changeData(true);
-    console.log("emmited")
+    
     };
 
 

@@ -40,6 +40,23 @@ res.status(200).send(astuce);
 }
 
 
+const AddAstuce = async (req,res) =>{
+
+let idUser = req.user.id;
+let info ={
+
+title:req.body.title,
+text:req.body.text,
+idVillageois : req.body.idVillageois,
+approved : false,
+idUser : idUser
+}
+
+const astuce = await astucetable.create(info);
+res.status(200).send(astuce);
+
+}
+
 
 
 
@@ -47,5 +64,6 @@ res.status(200).send(astuce);
 
 module.exports = {
 getAllAstuces,
-getAstuce
+getAstuce,
+AddAstuce
 }

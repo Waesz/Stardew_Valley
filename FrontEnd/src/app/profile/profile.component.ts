@@ -30,7 +30,7 @@ btnaction = "edit";
 
 
   ngOnInit(): void {
-
+    
     if(AuthInterceptor.accessToken=='')this.router.navigate(['/']);
 
     var savebutton = document.getElementById('savebutton')!;
@@ -48,7 +48,7 @@ savebutton.addEventListener('click',function(){
 
          } else {
       savebutton.innerHTML = "edit";
-      savebutton.click =()=>{console.log("hi")};
+      savebutton.click =()=>{};
       }
   
    });

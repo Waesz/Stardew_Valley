@@ -1,21 +1,3 @@
-####  STARDEW VALLEY WIKI ######
-
-Ce projet se décompose en trois fichier: 
-
--Le BACKEND
--Base de donnée
--Le FRONTEND
-
-## le BackEnd
-Elle contient notre API pour faire fonctionner les différents services du site et permet au site de se conneceter à la base de donnée.
-
-## Base de donnée
-Elle contient un fichier bdd.sql qui permet de créer la base de donné du projet.
-
-## FronEnd
-Elle fonctionne avec angular CLI et offre une interface aux clients. Nous avons également utiliser Boostrap.
-
-
 # FrontEnd
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.

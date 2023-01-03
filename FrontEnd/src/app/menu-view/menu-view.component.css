@@ -5,11 +5,21 @@
 	padding: 260px ;
 	text-align: center ;
 	font: 0.8em "Trebuchet MS", helvetica, sans-serif ;
-	background:  #a0ecd0;
+	
+	background-image: url("../../assets/image/wallpaper.jpg"); 
+	background-size: 2000px;
+	background-position: 50%;
+	background-repeat: no-repeat;
+ 
 }
 
 
+#title , #text{
+	color: azure;
+	position: relative;
+	top: 400px;
 
+}
 
 
 div#logo               /* placement de l'image dans le coin en à droite */
